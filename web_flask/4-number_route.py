@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""3-python_route module
+"""4-number_route module
 starts a web app and handles routes
 """
 
@@ -35,7 +35,11 @@ def python_text(text="is cool"):
     """
     text = text.replace("_", " ")
     return "Python {}".format(text)
+    
 
+@app.route('/number/<int:n>', strict_slashes=False)
+def number(n):
+        return "{} is a number".format(n)
 
 if __name__ == "__main__":
 
