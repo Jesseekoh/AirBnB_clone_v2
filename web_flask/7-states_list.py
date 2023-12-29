@@ -3,6 +3,7 @@
 
 from flask import Flask
 from models import storage
+from models.state import State
 from flask import render_template
 
 app = Flask(__name__)
@@ -13,7 +14,7 @@ def states_list():
     """Displays an HTML page with a list of all State objects in DBStorage.
     States are sorted by name.
     """
-    states = storage.all("State")
+    states = storage.all(State)
     return render_template("7-states_list.html", states=states)
 
 
